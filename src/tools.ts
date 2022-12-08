@@ -11,7 +11,7 @@ export class MongoTools {
     list: Array<T>,
     value: any
   ): T | undefined {
-    return list.find((v) => this.Compare(v, value));
+    return list.find((v) => MongoTools.Compare(v, value));
   }
 
   public static FindFieldCompare<T>(
@@ -19,7 +19,7 @@ export class MongoTools {
     field: keyof T,
     value: any
   ): T | undefined {
-    return list.find((v) => this.Compare(String(v[field]), value));
+    return list.find((v) => MongoTools.Compare(String(v[field]), value));
   }
 
   public static ToObjectId(value: ID): ObjectId {
