@@ -24,7 +24,7 @@ export class MongoTools {
 
   public static ToObjectId(value: ID): ObjectId {
     if (!value || !String(value).length) return "" as unknown as ObjectId;
-    return Types.ObjectId(String(value));
+    return new Types.ObjectId(String(value));
   }
 
   public static CreateSchema(
